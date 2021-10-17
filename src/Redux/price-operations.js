@@ -3,7 +3,7 @@ import actions from './price-actions';
 import { alert, defaultModules } from '@pnotify/core';
 import '@pnotify/core/dist/PNotify.css';
 
-axios.defaults.baseURL = 'https://app-pricechecker.herokuapp.com/api/getPrices';
+axios.defaults.baseURL = 'https://price-checker-backend.onrender.com/api/getPrices';
 
 const fetchPricesHL =()=>async dispatch=>{
     dispatch(actions.fetchPricesHLRequest());
