@@ -1,10 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import priceOperations from "../Redux/price-operations";
 import pricesSelectors from "../Redux/price-selectors";
 import Loader from "react-loader-spinner";
 import styles from "../Styles/main.module.css";
-
+import PDFFile from "./PDFFile";
+import {PDFDownloadLink} from "@react-pdf/renderer";
+import { AiOutlineDownload } from 'react-icons/ai';
 
 export default function HomeView() {
     const loading = useSelector(pricesSelectors.getLoading);
@@ -29,6 +31,7 @@ export default function HomeView() {
     const svitZamkiv = useSelector(pricesSelectors.getSvitZamkiv);
     const kupiZamok = useSelector(pricesSelectors.getKupiZamok);
 
+    const dataPDF = {houseLock, kremin, topZamok, zamokUkr, ua740, ukrLock, zamochniki, svitZamkiv, kupiZamok};
     const dispatch = useDispatch();
     const handleClickHL = (event) => {
         event.preventDefault();
@@ -78,6 +81,11 @@ export default function HomeView() {
 
     return (
         <>
+            <div className={styles.printSection}>
+                <PDFDownloadLink document={<PDFFile data={dataPDF}/>} fileName="priceChecker.pdf">
+                    {({loading}) => (loading? <button className={styles.printBTNLoading}>Loading <AiOutlineDownload/></button>:  <button className={styles.printBTN}>Download<AiOutlineDownload/></button>)}
+                </PDFDownloadLink>
+            </div>
             {loading && <Loader
                 type="ThreeDots"
                 color="teal"

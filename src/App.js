@@ -3,7 +3,6 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import AppNav from "./Components/AppNav";
-import ErrorNotify from "../src/Components/errorNotify";
 
 const HomeView = lazy(() =>
     import("./Components/HomeView" /* webpackChunkName: "home" */)
@@ -12,7 +11,6 @@ const HomeView = lazy(() =>
 export default function App() {
     return (
         <>
-            <ErrorNotify />
             <AppNav />
             <Suspense
                 fallback={

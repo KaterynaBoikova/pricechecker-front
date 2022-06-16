@@ -74,6 +74,8 @@ a{
     overflow:hidden;
     text-overflow:ellipsis;
     background-color: #e6ebed;
+    position: sticky;
+    top: 0;
 }
 .columnHeadersModel{
     width: 100%;
@@ -85,4 +87,31 @@ a{
     overflow:hidden;
     text-overflow:ellipsis;
     background-color: #e6ebed;
+    position: sticky;
+    top: 0;
+}
+.printSection{
+    background-color: #e6ebed;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.printBTN, .printBTNLoading{
+    height: 37px;
+    border: 1px solid #b6c4ca;
+    background: transparent;
+    padding: 10px;
+    text-align: center;
+    margin-left: 20px;
+}
+.printBTNLoading{
+    color: grey;
+}
+.printBTN svg{
+    font-size: 16px;
+    margin-left: 5px;
+}
+.printBTNLoading svg{
+    color: grey;
+    font-size: 16px;
+    margin-left: 5px;
 }

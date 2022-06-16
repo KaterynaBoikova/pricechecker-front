@@ -37,26 +37,7 @@ const fetchPricesKupiZamokSuccess = createAction('prices/fetchPricesKupiZamokSuc
 const fetchPricesKupiZamokError = createAction('prices/fetchPricesKupiZamokError');
 
 
-// const hideErrorHouseLock = createAction('errors/hideErrorHouseLock');
-// const hideErrorKremin = createAction('errors/hideErrorHouseLock');
-// const hideErrorTopZamok = createAction('errors/hideErrorHouseLock');
-// const hideErrorZamokUkr = createAction('errors/hideErrorHouseLock');
-// const hideError740 = createAction('errors/hideErrorHouseLock');
-// const hideErrorSvitZamkiv = createAction('errors/hideErrorHouseLock');
-// const hideErrorZamochniki = createAction('errors/hideErrorHouseLock');
-// const hideErrorUkrLock = createAction('errors/hideErrorHouseLock');
-// const hideErrorKupiZamok = createAction('errors/hideErrorHouseLock');
-
 export default {
-    // hideErrorHouseLock,
-    // hideErrorKupiZamok,
-    // hideErrorUkrLock,
-    // hideErrorZamochniki,
-    // hideErrorSvitZamkiv,
-    // hideError740,
-    // hideErrorZamokUkr,
-    // hideErrorTopZamok,
-    // hideErrorKremin,
     fetchPricesKupiZamokRequest,
     fetchPricesKupiZamokSuccess,
     fetchPricesKupiZamokError,

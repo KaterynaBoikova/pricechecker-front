@@ -1,7 +1,7 @@
 import axios from "axios";
 import actions from './price-actions';
-import { alert, defaultModules } from '@pnotify/core';
-import '@pnotify/core/dist/PNotify.css';
+
+
 
 axios.defaults.baseURL = ' https://app-pricechecker-back.herokuapp.com/api/getPrices';
 
