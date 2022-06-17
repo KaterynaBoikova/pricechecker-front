@@ -7,6 +7,8 @@ const styles = StyleSheet.create({
     page:{
       paddingTop: '10mm',
       paddingBottom: '10mm',
+        paddingLeft: '5mm',
+        paddingRight: '5mm',
         fontFamily: 'Roboto',
     },
     wrapper: {
@@ -14,7 +16,7 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'space-around',
         flexDirection: "row",
-        fontSize: 14,
+        fontSize: 12,
         fontFamily: 'Roboto',
     },
     columnA: {
@@ -57,7 +59,7 @@ const styles = StyleSheet.create({
         textAlign: 'left',
         paddingLeft: '2mm',
         display: 'flex',
-        fontSize: 12,
+        fontSize: 10,
         marginBottom: '1mm',
         fontFamily: 'Roboto',
     },
@@ -95,25 +97,39 @@ const styles = StyleSheet.create({
     },
     pageNumber: {
         position: 'absolute',
-        fontSize: 12,
+        fontSize: 8,
         bottom: '5mm',
         left: 0,
         right: 0,
         textAlign: 'center',
         color: 'grey',
     },
-
-
-
+    pdfDate:{
+        position: 'absolute',
+        fontSize: 8,
+        top: '2,5mm',
+        right: '5mm',
+        textAlign: 'center',
+        color: 'grey',
+    },
+    pdfName:{
+        position: 'absolute',
+        fontSize: 8,
+        top: '2,5mm',
+        left: '5mm',
+        textAlign: 'center',
+        color: 'grey',
+    }
 });
+let date = new Date();
+const currDateTime = date.toLocaleString();
 
 export default function PDFFile(props) {
     return (
     <Document author={'KB'}>
         <Page orientation={"landscape"} style={styles.page} wrap>
-            <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => (
-                `${pageNumber} / ${totalPages}`
-            )} fixed />
+            <Text style={styles.pdfName} fixed>Price Checker</Text>
+            <Text style={styles.pdfDate} fixed>{`${currDateTime}`}</Text>
 
             <View style={styles.wrapper}>
 
@@ -176,8 +192,13 @@ export default function PDFFile(props) {
                     {props.data.svitZamkiv.map((item, index) => {return (
                         <Text style={styles.cell}>{item.priceSvitZamkiv}</Text>);})}
                 </View>
-
             </View>
+
+            <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => (
+                `${pageNumber} / ${totalPages}`
+            )} fixed />
+
+
         </Page>
     </Document>
     );

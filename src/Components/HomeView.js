@@ -32,6 +32,7 @@ export default function HomeView() {
     const kupiZamok = useSelector(pricesSelectors.getKupiZamok);
 
     const dataPDF = {houseLock, kremin, topZamok, zamokUkr, ua740, ukrLock, zamochniki, svitZamkiv, kupiZamok};
+
     const dispatch = useDispatch();
     const handleClickHL = (event) => {
         event.preventDefault();
@@ -83,7 +84,7 @@ export default function HomeView() {
         <>
             <div className={styles.printSection}>
                 <PDFDownloadLink document={<PDFFile data={dataPDF}/>} fileName="priceChecker.pdf">
-                    {({loading}) => (loading? <button className={styles.printBTNLoading}>Loading <AiOutlineDownload/></button>:  <button className={styles.printBTN}>Download<AiOutlineDownload/></button>)}
+                    {({loading}) => (loading? <button className={styles.printBTNLoading}>Loading <AiOutlineDownload className={styles.iconL}/></button>:  <button className={styles.printBTN}>Download<AiOutlineDownload className={styles.iconMain}/></button>)}
                 </PDFDownloadLink>
             </div>
             {loading && <Loader
