@@ -137,7 +137,6 @@ export default function PDFFile(props) {
                 <Text style={styles.columnHeadersModel} fixed>Model</Text>
                     {props.data.houseLock.map((item, index) => {return (
                         <Text style={styles.cellModel}>{item.model}</Text>);})}
-                    <Text style={styles.cellModel}>Model Long name some very long model name Model Long name some very long model name</Text>
                 </View>
 
                 <View style={styles.columnN}>
