@@ -45,22 +45,21 @@ const styles = StyleSheet.create({
         display: 'flex',
         marginBottom: '1mm',
         fontFamily: 'Roboto',
+        fontSize: 12,
     },
     cellModel:{
         width: '100%',
         border: '1px solid lightgray',
         height: '10mm',
-        paddingTop: '2mm',
-        paddingBottom: '2mm',
-        // overflow: 'hidden',
-        // textOverflow: 'ellipsis',
-        // whiteSpace: 'nowrap',
-        whiteSpace: 'nowrap',
+        maxLines: 2,
+        textOverflow: 'ellipsis',
+        overflow: 'hidden',
+        paddingRight: '1mm',
         backgroundColor: '#e6ebed',
         textAlign: 'left',
         paddingLeft: '2mm',
         display: 'flex',
-        fontSize: 10,
+        fontSize: 12,
         marginBottom: '1mm',
         fontFamily: 'Roboto',
     },
@@ -138,6 +137,7 @@ export default function PDFFile(props) {
                 <Text style={styles.columnHeadersModel} fixed>Model</Text>
                     {props.data.houseLock.map((item, index) => {return (
                         <Text style={styles.cellModel}>{item.model}</Text>);})}
+                    <Text style={styles.cellModel}>Model Long name some very long model name Model Long name some very long model name</Text>
                 </View>
 
                 <View style={styles.columnN}>

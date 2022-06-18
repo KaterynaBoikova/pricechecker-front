@@ -121,3 +121,35 @@ a{
     margin-left: 5px;
     vertical-align: bottom;
 }
+.errorContainer{
+    position: absolute;
+    right: 0px;
+}
+.messageContainer{
+    background: #B80F0A;
+    padding: 10px;
+    padding-right: 40px;
+    color: white;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 100;
+}
+.closeBoxIcon{
+    font-size: 24px;
+}
+.closeBoxBtn{
+    background: transparent;
+    border: none;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.textFrom{
+    font-size: 10px;
+    margin: 0;
+}
+.errorText{
+    margin: 0;
+}

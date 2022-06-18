@@ -48,6 +48,7 @@ const ua740 = createReducer([], {
     },
 });
 
+
 const errorHouseLock = createReducer({error: null, isOpen: false}, {
     [actions.fetchPricesHLError]: (state, action) => {
         return {error: action.payload, isOpen: true};

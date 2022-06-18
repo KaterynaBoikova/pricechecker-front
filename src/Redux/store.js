@@ -1,6 +1,5 @@
 import priceReducer from './price-reducer';
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-
 const middleware = getDefaultMiddleware();
 
 const store = configureStore({

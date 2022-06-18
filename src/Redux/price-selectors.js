@@ -1,4 +1,3 @@
-import { createSelector } from '@reduxjs/toolkit';
 
 const getLoading = state=>state.priceChecker.loading;
 const getHouseLock = state=>state.priceChecker.houseLock;
@@ -20,6 +19,7 @@ const get740Error = state=>state.priceChecker.error740;
 const getKupiZamokError = state=>state.priceChecker.errorKupiZamok;
 const getUkrLockError = state=>state.priceChecker.errorUkrLock;
 const getSvitZamkivError = state=>state.priceChecker.errorSvitZamkiv;
+
 
 export default {
     getHouseLockError,
