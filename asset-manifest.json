@@ -3,8 +3,8 @@
     "home.js": "/pricechecker-front/static/js/home.3d36f668.chunk.js",
     "home.js.map": "/pricechecker-front/static/js/home.3d36f668.chunk.js.map",
     "main.css": "/pricechecker-front/static/css/main.76a1237d.chunk.css",
-    "main.js": "/pricechecker-front/static/js/main.9ac3299b.chunk.js",
-    "main.js.map": "/pricechecker-front/static/js/main.9ac3299b.chunk.js.map",
+    "main.js": "/pricechecker-front/static/js/main.44f7793a.chunk.js",
+    "main.js.map": "/pricechecker-front/static/js/main.44f7793a.chunk.js.map",
     "runtime-main.js": "/pricechecker-front/static/js/runtime-main.6b3efe04.js",
     "runtime-main.js.map": "/pricechecker-front/static/js/runtime-main.6b3efe04.js.map",
     "static/js/3.e1f03b21.chunk.js": "/pricechecker-front/static/js/3.e1f03b21.chunk.js",
@@ -24,6 +24,6 @@
     "static/css/4.ab75b8d7.chunk.css",
     "static/js/4.d0e28b45.chunk.js",
     "static/css/main.76a1237d.chunk.css",
-    "static/js/main.9ac3299b.chunk.js"
+    "static/js/main.44f7793a.chunk.js"
   ]
 }
