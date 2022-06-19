@@ -6,6 +6,8 @@ import {AiOutlineDownload} from "react-icons/ai";
 import pricesSelectors from "../Redux/price-selectors";
 import Loader from '../Components/Loader';
 import PDFFile from "./PDFFile";
+import axios from "axios";
+import actions from "../Redux/price-actions";
 
 export default function AppNav() {
     const loading = useSelector(pricesSelectors.getLoading);

@@ -3,18 +3,7 @@ import actions from './price-actions';
 
 axios.defaults.baseURL = ' https://app-pricechecker-back.herokuapp.com/api/getPrices';
 
-const fetchPricesHL =()=>async dispatch=>{
-    dispatch(actions.fetchPricesHLRequest());
-   await axios.get('/houselock')
-        .then(({data})=>dispatch(actions.fetchPricesHLSuccess(data)))
-        .catch(error=>dispatch(actions.fetchPricesHLError(error.message)))
-};
-const fetchPricesKremin =()=>async dispatch=>{
-    dispatch(actions.fetchPricesKreminRequest());
-   await axios.get('/kremin')
-        .then(({data})=>dispatch(actions.fetchPricesKreminSuccess(data)))
-        .catch(error=>dispatch(actions.fetchPricesKreminError(error.message)))
-};
+
 const fetchPricesZamokUkr =()=>async dispatch=>{
     dispatch(actions.fetchPricesZamokUkrRequest());
     await axios.get('/zamokukr')
@@ -26,6 +15,20 @@ const fetchPricesTopZamok =()=>async dispatch=>{
     await axios.get('/topzamok')
         .then(({data})=>dispatch(actions.fetchPricesTopZamokSuccess(data)))
         .catch(error=>dispatch(actions.fetchPricesTopZamokError(error.message)))
+};
+
+
+const fetchPricesHL =()=>async dispatch=>{
+    dispatch(actions.fetchPricesHLRequest());
+   await axios.get('/houselock')
+        .then(({data})=>dispatch(actions.fetchPricesHLSuccess(data)))
+        .catch(error=>dispatch(actions.fetchPricesHLError(error.message)))
+};
+const fetchPricesKremin =()=>async dispatch=>{
+    dispatch(actions.fetchPricesKreminRequest());
+   await axios.get('/kremin')
+        .then(({data})=>dispatch(actions.fetchPricesKreminSuccess(data)))
+        .catch(error=>dispatch(actions.fetchPricesKreminError(error.message)))
 };
 const fetchPricesKupiZamok =()=>async dispatch=>{
     dispatch(actions.fetchPricesKupiZamokRequest());
