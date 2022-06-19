@@ -12,7 +12,7 @@ export default function Error({from, message, action}) {
 
     return(
         <div className={styles.messageContainer}>
-            <p style={styles.errorText}><BsExclamationLg />{message}</p>
+            <p className={styles.errorText}><BsExclamationLg />{message}</p>
             <p className={styles.textFrom}>{from}</p>
             <button className={styles.closeBoxBtn} onClick={action}><AiOutlineCloseCircle className={styles.closeBoxIcon}/></button>
         </div>
