@@ -1,15 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "../Styles/main.module.css";
 import {useSelector} from "react-redux";
 import {PDFDownloadLink} from "@react-pdf/renderer";
 import {AiOutlineDownload} from "react-icons/ai";
+import {GrUserWorker} from 'react-icons/gr';
 import pricesSelectors from "../Redux/price-selectors";
 import Loader from '../Components/Loader';
 import PDFFile from "./PDFFile";
-import axios from "axios";
-import actions from "../Redux/price-actions";
+import WorkerMenu from './WorkerMenu';
 
 export default function AppNav() {
+    const [isShown, setIsShown] = useState(false);
+    const handleWorkerMenu = ()=>{
+        setIsShown(current => !current);
+    };
+
     const loading = useSelector(pricesSelectors.getLoading);
     const houseLock = useSelector(pricesSelectors.getHouseLock);
     const kremin = useSelector(pricesSelectors.getKremin);
@@ -26,13 +31,17 @@ export default function AppNav() {
     return (
         <>
         <header className={styles.header}>
-            <h2>Check Prices</h2>
+            <h2>Price Checker</h2>
             <div className={styles.printSection}>
                 <PDFDownloadLink document={<PDFFile data={dataPDF}/>} fileName="priceChecker.pdf">
                     {({loading}) => (loading? <button className={styles.printBTNLoading}>Loading <AiOutlineDownload className={styles.iconL}/></button>:  <button className={styles.printBTN}>Download<AiOutlineDownload className={styles.iconMain}/></button>)}
                 </PDFDownloadLink>
             </div>
+            <div>
+                <button className={styles.printBTN} onClick={handleWorkerMenu}>Worker<GrUserWorker className={styles.iconMain}/></button>
+            </div>
         </header>
+            {isShown && (<WorkerMenu/>)}
             <div className={styles.loader}>
             {loading && <Loader />}
             </div>
