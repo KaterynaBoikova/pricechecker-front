@@ -1,22 +1,35 @@
 import axios from "axios";
 import actions from './price-actions';
 
-// axios.defaults.baseURL = ' https://app-pricechecker-back.herokuapp.com/api/getPrices';
+axios.defaults.baseURL = ' https://app-pricechecker-back.herokuapp.com/api/getPrices';
+// axios.defaults.baseURL = ' http://localhost:8083/api/getPrices';
 
-axios.defaults.baseURL = ' http://localhost:8060/api/getPrices';
-const fetchPricesZamokUkr =()=>async dispatch=>{
+const fetchPricesZamokUkr =(jobId)=>async dispatch=>{
     dispatch(actions.fetchPricesZamokUkrRequest());
-    await axios.get('/zamokukr/jobResult')
+    await axios.get(`/jobs/Result/${jobId}`)
         .then(({data})=>dispatch(actions.fetchPricesZamokUkrSuccess(data)))
         .catch(error=>dispatch(actions.fetchPricesZamokUkrError(error.message)))
 };
-const fetchPricesTopZamok =()=>async dispatch=>{
+const fetchPricesTopZamok =(jobId)=>async dispatch=>{
     dispatch(actions.fetchPricesTopZamokRequest());
-    await axios.get('/topzamok/jobResult')
+    await axios.get(`/jobs/Result/${jobId}`)
         .then(({data})=>dispatch(actions.fetchPricesTopZamokSuccess(data)))
         .catch(error=>dispatch(actions.fetchPricesTopZamokError(error.message)))
 };
 
+// Fetch data on header click, old functions to fetch all at 1 call
+// const fetchPricesZamokUkr =()=>async dispatch=>{
+//     dispatch(actions.fetchPricesZamokUkrRequest());
+//     await axios.get('/zamokukr/jobResult')
+//         .then(({data})=>dispatch(actions.fetchPricesZamokUkrSuccess(data)))
+//         .catch(error=>dispatch(actions.fetchPricesZamokUkrError(error.message)))
+// };
+// const fetchPricesTopZamok =()=>async dispatch=>{
+//     dispatch(actions.fetchPricesTopZamokRequest());
+//     await axios.get('/topzamok/jobResult')
+//         .then(({data})=>dispatch(actions.fetchPricesTopZamokSuccess(data)))
+//         .catch(error=>dispatch(actions.fetchPricesTopZamokError(error.message)))
+// };
 
 const fetchPricesHL =()=>async dispatch=>{
     dispatch(actions.fetchPricesHLRequest());

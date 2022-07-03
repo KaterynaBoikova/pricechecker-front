@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import priceOperations from "../Redux/price-operations";
-import pricesSelectors from "../Redux/price-selectors";
+import priceOperations from "../Redux/price/price-operations";
+import pricesSelectors from "../Redux/price/price-selectors";
 import styles from "../Styles/main.module.css";
-import PDFFile from "./PDFFile";
-import {PDFDownloadLink} from "@react-pdf/renderer";
-import { AiOutlineDownload } from 'react-icons/ai';
+import jobsSelectors from "../Redux/jobs/jobs-selectors";
 
 export default function HomeView() {
+    const getZamokUkrJob = useSelector(jobsSelectors.getZamokUkrJob);
+    const getTopZamokJob = useSelector(jobsSelectors.getTopZamokJob);
 
     const [statusHL, setStatusHL] = useState(null);
     const [statusKremin, setStatusKremin] = useState(null);
@@ -65,14 +65,25 @@ export default function HomeView() {
         dispatch(priceOperations.fetchPricesUkrLock());
         setStatusUkrLock(true);
     };
+    //Fetch data on header click, old functions to fetch all at 1 call
+    // const handleClickZamokUkr = (event) => {
+    //     event.preventDefault();
+    //     dispatch(priceOperations.fetchPricesZamokUkr());
+    //     setStatusZamokUkr(true);
+    // };
+    // const handleClickTopZamok = (event) => {
+    //     event.preventDefault();
+    //     dispatch(priceOperations.fetchPricesTopZamok());
+    //     setStatusTopZamok(true);
+    // };
     const handleClickZamokUkr = (event) => {
         event.preventDefault();
-        dispatch(priceOperations.fetchPricesZamokUkr());
+        dispatch(priceOperations.fetchPricesZamokUkr(getZamokUkrJob.jobId));
         setStatusZamokUkr(true);
     };
     const handleClickTopZamok = (event) => {
         event.preventDefault();
-        dispatch(priceOperations.fetchPricesTopZamok());
+        dispatch(priceOperations.fetchPricesTopZamok(getTopZamokJob.jobId));
         setStatusTopZamok(true);
     };
 

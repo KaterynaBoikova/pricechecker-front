@@ -12,16 +12,29 @@ const kremin = createReducer([], {
         return action.payload.kremin;
     },
 });
+
 const zamokUkr = createReducer([], {
     [actions.fetchPricesZamokUkrSuccess]: (state, action) => {
-        return action.payload.zamokUkr;
+        return action.payload;
     },
 });
 const topZamok = createReducer([], {
     [actions.fetchPricesTopZamokSuccess]: (state, action) => {
-        return action.payload.topZamok;
+        return action.payload;
     },
 });
+
+// Fetch data on header click, old functions to fetch all at 1 call
+// const zamokUkr = createReducer([], {
+//     [actions.fetchPricesZamokUkrSuccess]: (state, action) => {
+//         return action.payload.zamokUkr;
+//     },
+// });
+// const topZamok = createReducer([], {
+//     [actions.fetchPricesTopZamokSuccess]: (state, action) => {
+//         return action.payload.topZamok;
+//     },
+// });
 const ukrLock = createReducer([], {
     [actions.fetchPricesUkrLockSuccess]: (state, action) => {
         return action.payload.ukrLock;
@@ -53,7 +66,7 @@ const errorHouseLock = createReducer({error: null, isOpen: false}, {
     [actions.fetchPricesHLError]: (state, action) => {
         return {error: action.payload, isOpen: true};
     },
-    [actions.hideErrorHouseLock]: (state, action) => {
+    [actions.hideErrorHL]: (state, action) => {
         return {error: null, isOpen: false};
     },
 });

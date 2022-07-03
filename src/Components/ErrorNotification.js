@@ -1,7 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import pricesSelectors from "../Redux/price-selectors";
-import priceActions from "../Redux/price-actions";
+import pricesSelectors from "../Redux/price/price-selectors";
+import priceActions from "../Redux/price/price-actions";
+import jobsActions from "../Redux/jobs/jobs-action";
+import jobsSelectors from "../Redux/jobs/jobs-selectors";
 import Error from './Error';
 import styles from "../Styles/main.module.css";
 
@@ -17,6 +19,10 @@ export default function ErrorNotification() {
     const getSvitZamkivError = useSelector(pricesSelectors.getSvitZamkivError);
     const get740Error = useSelector(pricesSelectors.get740Error);
 
+    const getZamokUkrJobError = useSelector(jobsSelectors.getZamokUkrJobError);
+    const getTopZamokJobError = useSelector(jobsSelectors.getTopZamokJobError);
+
+
     const hideErrorHL = ()=>{dispatch(priceActions.hideErrorHL());}
     const hideErrorKremin = ()=>{dispatch(priceActions.hideErrorKremin());}
     const hideErrorZamokUkr = ()=>{dispatch(priceActions.hideErrorZamokUkr());}
@@ -26,6 +32,9 @@ export default function ErrorNotification() {
     const hideError740 = ()=>{dispatch(priceActions.hideError740());}
     const hideErrorSvitZamkiv = ()=>{dispatch(priceActions.hideErrorSvitZamkiv());}
     const hideErrorKupiZamok = ()=>{dispatch(priceActions.hideErrorKupiZamok());}
+
+    const hideErrorZamokUkrJob = ()=>{dispatch(jobsActions.hideErrorZamokUkrJob());}
+    const hideErrorTopZamokJob = ()=>{dispatch(jobsActions.hideErrorTopZamokJob());}
 
     return (
         <div className={styles.errorContainer}>
@@ -47,6 +56,11 @@ export default function ErrorNotification() {
                 (<Error from={'getSvitZamkivError'} message={getSvitZamkivError.error} action={hideErrorSvitZamkiv} />)}
             {get740Error.isOpen && get740Error.error &&
                 (<Error from={'get740Error'} message={get740Error.error} action={hideError740} />)}
+
+            {getZamokUkrJobError.isOpen && getZamokUkrJobError.error &&
+                (<Error from={'jobZamokUKr'} message={getZamokUkrJobError.error} action={hideErrorZamokUkrJob} />)}
+            {getTopZamokJobError.isOpen && getTopZamokJobError.error &&
+                (<Error from={'jobTopZamok'} message={getTopZamokJobError.error} action={hideErrorTopZamokJob} />)}
         </div>
     )
 };
