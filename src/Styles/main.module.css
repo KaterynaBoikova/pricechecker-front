@@ -166,6 +166,11 @@ a{
     margin-left: 5px;
      vertical-align: bottom;
 }
+.iconMainLink{
+     font-size: 20px;
+     margin: 0;
+     vertical-align: bottom;
+ }
 .iconL{
     color: grey;
     font-size: 16px;

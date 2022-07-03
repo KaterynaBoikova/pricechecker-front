@@ -41,7 +41,7 @@ export default function AppNav() {
                 <button className={styles.printBTN} onClick={handleWorkerMenu}>Worker<GrUserWorker className={styles.iconMain}/></button>
             </div>
             <div>
-                <button className={styles.printBTN}><a href='https://app-pricechecker-back.herokuapp.com/admin/queues' target="_blank" rel="noreferrer"><AiOutlineDashboard className={styles.iconMain}/></a></button>
+                <a className={styles.printBTN} href='https://app-pricechecker-back.herokuapp.com/admin/queues' target="_blank" rel="noreferrer"><AiOutlineDashboard className={styles.iconMainLink}/></a>
             </div>
         </header>
             {isShown && (<WorkerMenu/>)}
