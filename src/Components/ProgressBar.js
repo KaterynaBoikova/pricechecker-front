@@ -1,37 +1,50 @@
-import React from 'react';
+import React from "react";
 
-export default function ProgressBar ({progress, label}){
-    const parentBar = {
-        height: '30px',
-        width: '100%',
-        backgroundColor: '#e6ebed',
-        borderRadius: 40,
-    }
-
-    const childBar = {
-        height: '100%',
-        width: `${progress}%`,
-        backgroundColor: 'rgba(0, 128, 128, 0.5)',
-        borderRadius:40,
-        textAlign: 'left'
-    }
-
-    const labelBar = {
-        padding: 5,
-        borderRadius: 40,
-        color: 'black',
-        width: '300px',
-        height: '100%',
-        display: 'inline-block',
-        fontSize: '14px',
-        lineHeight: '20px',
-    }
-
-    return(
-        <div style={parentBar}>
-            <div style={childBar}>
-                <span style={labelBar}>{`${progress}% ${label}`}</span>
-            </div>
-        </div>
-    )
+export default function ProgressBar({ progress }) {
+  const r = 52;
+  const calcOffset = (progress, circum) => {
+    return circum - (circum * progress) / 100;
+  };
+  const calcDash = (r) => {
+    return ((2 * 22) / 7) * r;
+  };
+  const dashArray = calcDash(r);
+  const dashOffset = calcOffset(progress, dashArray);
+  const parentBar = {
+    fill: "transparent",
+    strokeWidth: "10px",
+    stroke: "#c1f6ed",
+  };
+  const childBar = {
+    fill: "transparent",
+    strokeDasharray: `${dashArray}`,
+    strokeDashoffset: `${dashOffset}`,
+    stroke: "#02353c",
+    strokeWidth: "10px",
+    strokeLinecap: "round",
+  };
+  const labelBar = {
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    position: "absolute",
+  };
+  const divContainer = {
+    position: "relative",
+    width: "114px",
+    height: "114px",
+  };
+  const svgContainer = {
+    width: "100%",
+    height: "100%",
+  };
+  return (
+    <div style={divContainer}>
+      <svg style={svgContainer}>
+        <circle style={parentBar} cx="57" cy="57" r="52" />
+        <circle style={childBar} cx="57" cy="57" r="52" />
+      </svg>
+      <span style={labelBar}>{`${progress}%`}</span>
+    </div>
+  );
 }

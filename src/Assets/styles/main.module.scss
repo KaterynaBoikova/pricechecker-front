@@ -1,0 +1,248 @@
+@import "variables.module";
+
+.svgIcon {
+  font-size: 18px;
+  margin-left: 5px;
+  vertical-align: bottom;
+  color: $primaryDarkColor;
+}
+header {
+  height: 60px;
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px 0 20px 0;
+}
+.btnNav {
+  font-size: 18px;
+  width: 200px;
+  letter-spacing: 1px;
+  outline: 0;
+  border: 1px solid $primaryDarkColor;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px 20px 10px 20px;
+  margin-right: 50px;
+  font-weight: normal;
+}
+.btnNav::after {
+  content: "";
+  background-color: $accentColor;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+.btnNav:hover::after {
+  top: 0px;
+  left: 0px;
+}
+//worker menu
+
+.workerMenu {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid $primaryDarkColor;
+  color: $primaryDarkColor;
+  padding: 10px;
+  margin: 0 20px 0 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  &::before {
+    content: "";
+    background-color: $secondaryColor;
+    position: absolute;
+    height: 100%;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.workerMenuSide {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.workerMenuData {
+  text-align: center;
+}
+.btnWorker {
+  align-self: center;
+  border-style: solid;
+  border-width: 2px;
+  border-color: $primaryDarkColor;
+  background: transparent;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  color: $primaryDarkColor;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 23px;
+  outline: none;
+  padding: 0.75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.btnWorker:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+.workerMenuBar {
+}
+
+//worker menu end
+//main
+.mainContainer,
+header,
+.workerMenu {
+  margin: auto;
+  width: 100%;
+  margin-top: 50px;
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+  @media screen and (min-width: 1240px) {
+    width: 1240px;
+  }
+}
+.mainWrapper {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+}
+.column0 {
+  width: 30%;
+}
+.column1 {
+  width: calc(70% / 9);
+}
+.columnHeader,
+.columnHeaderModel {
+  height: 50px;
+  background: $white;
+  color: $primaryDarkColor;
+  border-top: 1px solid $primaryDarkColor;
+  border-bottom: 1px solid $primaryDarkColor;
+  border-right: 1px solid $primaryDarkColor;
+  text-transform: uppercase;
+  font-size: 18px;
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 8px 0px 0px rgba(193, 246, 237, 1);
+  margin-bottom: 10px;
+}
+.columnHeaderModel {
+  border-left: 1px solid $primaryDarkColor;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btnMain {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  width: 100%;
+  height: 50px;
+  color: $primaryDarkColor;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom center;
+    background-color: $accentColor;
+    z-index: -1;
+    transition: transform 0.3s;
+  }
+  &:hover::after {
+    transform: scaleY(1);
+  }
+}
+.cellModel {
+  padding: 10px 0px 10px 0px;
+  height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cell {
+  padding: 10px 5px 10px 5px;
+  height: 40px;
+}
+div.cell:nth-child(odd),
+div.cellModel:nth-child(odd) {
+  background: $primaryLightColor;
+}
+.linkNotActive {
+}
+//main end
+//error
+.errorContainer {
+  position: absolute;
+  right: 0;
+}
+.messageContainer {
+  background: #b80f0a;
+  padding: 10px;
+  padding-right: 40px;
+  color: white;
+  margin-bottom: 5px;
+  position: relative;
+  z-index: 100;
+}
+.closeBoxIcon {
+  font-size: 24px;
+}
+.closeBoxBtn {
+  background: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+.textFrom {
+  font-size: 10px;
+  margin: 0;
+}
+.errorText {
+  margin: 0;
+}
+//error end
+//loader
+.loader {
+  height: 50px;
+}
+div[data-testid="three-dots-loading"] {
+  justify-content: center;
+}
+//loader end
