@@ -1,26 +1,26 @@
 {
   "files": {
-    "home.js": "/pricechecker-front/static/js/home.ff5129fc.chunk.js",
-    "home.js.map": "/pricechecker-front/static/js/home.ff5129fc.chunk.js.map",
-    "main.css": "/pricechecker-front/static/css/main.8b8c1edc.chunk.css",
-    "main.js": "/pricechecker-front/static/js/main.039055f9.chunk.js",
-    "main.js.map": "/pricechecker-front/static/js/main.039055f9.chunk.js.map",
-    "runtime-main.js": "/pricechecker-front/static/js/runtime-main.7ac15ed7.js",
-    "runtime-main.js.map": "/pricechecker-front/static/js/runtime-main.7ac15ed7.js.map",
+    "home.js": "/pricechecker-front/static/js/home.164031c4.chunk.js",
+    "home.js.map": "/pricechecker-front/static/js/home.164031c4.chunk.js.map",
+    "main.css": "/pricechecker-front/static/css/main.be4579de.chunk.css",
+    "main.js": "/pricechecker-front/static/js/main.12bdf629.chunk.js",
+    "main.js.map": "/pricechecker-front/static/js/main.12bdf629.chunk.js.map",
+    "runtime-main.js": "/pricechecker-front/static/js/runtime-main.a9bba89e.js",
+    "runtime-main.js.map": "/pricechecker-front/static/js/runtime-main.a9bba89e.js.map",
     "static/css/3.a691dc41.chunk.css": "/pricechecker-front/static/css/3.a691dc41.chunk.css",
-    "static/js/3.b3e5af59.chunk.js": "/pricechecker-front/static/js/3.b3e5af59.chunk.js",
-    "static/js/3.b3e5af59.chunk.js.map": "/pricechecker-front/static/js/3.b3e5af59.chunk.js.map",
+    "static/js/3.d6ea5313.chunk.js": "/pricechecker-front/static/js/3.d6ea5313.chunk.js",
+    "static/js/3.d6ea5313.chunk.js.map": "/pricechecker-front/static/js/3.d6ea5313.chunk.js.map",
     "index.html": "/pricechecker-front/index.html",
     "static/css/3.a691dc41.chunk.css.map": "/pricechecker-front/static/css/3.a691dc41.chunk.css.map",
-    "static/css/main.8b8c1edc.chunk.css.map": "/pricechecker-front/static/css/main.8b8c1edc.chunk.css.map",
-    "static/js/3.b3e5af59.chunk.js.LICENSE.txt": "/pricechecker-front/static/js/3.b3e5af59.chunk.js.LICENSE.txt",
+    "static/css/main.be4579de.chunk.css.map": "/pricechecker-front/static/css/main.be4579de.chunk.css.map",
+    "static/js/3.d6ea5313.chunk.js.LICENSE.txt": "/pricechecker-front/static/js/3.d6ea5313.chunk.js.LICENSE.txt",
     "static/media/Roboto-Regular.fc2b5060.ttf": "/pricechecker-front/static/media/Roboto-Regular.fc2b5060.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.7ac15ed7.js",
+    "static/js/runtime-main.a9bba89e.js",
     "static/css/3.a691dc41.chunk.css",
-    "static/js/3.b3e5af59.chunk.js",
-    "static/css/main.8b8c1edc.chunk.css",
-    "static/js/main.039055f9.chunk.js"
+    "static/js/3.d6ea5313.chunk.js",
+    "static/css/main.be4579de.chunk.css",
+    "static/js/main.12bdf629.chunk.js"
   ]
 }
