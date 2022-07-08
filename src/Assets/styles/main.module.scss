@@ -201,6 +201,8 @@ div.cellModel:nth-child(odd) {
   background: $primaryLightColor;
 }
 .linkNotActive {
+  pointer-events: none;
+  cursor: default;
 }
 //main end
 //error

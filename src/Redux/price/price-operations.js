@@ -80,7 +80,7 @@ const fetchPrices740 = () => async (dispatch) => {
     .catch((error) => dispatch(actions.fetchPrices740Error(error.message)));
 };
 
-export default {
+const priceOperations = {
   fetchPricesHL,
   fetchPricesKremin,
   fetchPricesZamokUkr,
@@ -91,3 +91,4 @@ export default {
   fetchPricesSvitZamkiv,
   fetchPricesUkrLock,
 };
+export default priceOperations;

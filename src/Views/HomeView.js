@@ -4,6 +4,7 @@ import priceOperations from "../Redux/price/price-operations";
 import pricesSelectors from "../Redux/price/price-selectors";
 import styles from "../Assets/styles/main.module.scss";
 import jobsSelectors from "../Redux/jobs/jobs-selectors";
+import removeUAH from "../Components/helper";
 
 export default function HomeView() {
   const getZamokUkrJob = useSelector(jobsSelectors.getZamokUkrJob);
@@ -74,8 +75,10 @@ export default function HomeView() {
           <div className={styles.column0}>
             <div className={styles.columnHeaderModel}>Model</div>
             {statusHL &&
-              houseLock.map(({ model }) => (
-                <div className={styles.cellModel}>{model}</div>
+              houseLock.map(({ model }, index) => (
+                <div className={styles.cellModel} key={index}>
+                  {model}
+                </div>
               ))}
           </div>
 
@@ -90,11 +93,11 @@ export default function HomeView() {
               </button>
             </div>
             {statusHL &&
-              houseLock.map(({ model, priceHouseLock, link }) => (
-                <div className={styles.cell}>
+              houseLock.map(({ model, priceHouseLock, link }, index) => (
+                <div className={styles.cell} key={index}>
                   {link === "" ? (
                     <a
-                      role="link"
+                      href={link}
                       aria-disabled="true"
                       className={styles.linkNotActive}
                     >
@@ -102,7 +105,7 @@ export default function HomeView() {
                     </a>
                   ) : (
                     <a href={link} target="_blank" rel="noreferrer">
-                      {priceHouseLock}
+                      {removeUAH(priceHouseLock)}
                     </a>
                   )}
                 </div>
@@ -120,11 +123,11 @@ export default function HomeView() {
               </button>
             </div>
             {statusKremin &&
-              kremin.map(({ model, priceKremin, link }) => (
-                <div className={styles.cell}>
+              kremin.map(({ model, priceKremin, link }, index) => (
+                <div className={styles.cell} key={index}>
                   {link === "" ? (
                     <a
-                      role="link"
+                      href={link}
                       aria-disabled="true"
                       className={styles.linkNotActive}
                     >
@@ -132,7 +135,7 @@ export default function HomeView() {
                     </a>
                   ) : (
                     <a href={link} target="_blank" rel="noreferrer">
-                      {priceKremin}
+                      {removeUAH(priceKremin)}
                     </a>
                   )}
                 </div>
@@ -150,11 +153,11 @@ export default function HomeView() {
               </button>
             </div>
             {statusTopZamok &&
-              topZamok.map(({ model, priceTopZamok, link }) => (
-                <div className={styles.cell}>
+              topZamok.map(({ model, priceTopZamok, link }, index) => (
+                <div className={styles.cell} key={index}>
                   {link === "" ? (
                     <a
-                      role="link"
+                      href={link}
                       aria-disabled="true"
                       className={styles.linkNotActive}
                     >
@@ -162,7 +165,7 @@ export default function HomeView() {
                     </a>
                   ) : (
                     <a href={link} target="_blank" rel="noreferrer">
-                      {priceTopZamok}
+                      {removeUAH(priceTopZamok)}
                     </a>
                   )}
                 </div>
@@ -180,11 +183,11 @@ export default function HomeView() {
               </button>
             </div>
             {statusZamokUkr &&
-              zamokUkr.map(({ model, priceZamokUkr, link }) => (
-                <div className={styles.cell}>
+              zamokUkr.map(({ model, priceZamokUkr, link }, index) => (
+                <div className={styles.cell} key={index}>
                   {link === "" ? (
                     <a
-                      role="link"
+                      href={link}
                       aria-disabled="true"
                       className={styles.linkNotActive}
                     >
@@ -192,7 +195,7 @@ export default function HomeView() {
                     </a>
                   ) : (
                     <a href={link} target="_blank" rel="noreferrer">
-                      {priceZamokUkr}
+                      {removeUAH(priceZamokUkr)}
                     </a>
                   )}
                 </div>
@@ -210,11 +213,11 @@ export default function HomeView() {
               </button>
             </div>
             {status740 &&
-              ua740.map(({ model, price740, link }) => (
-                <div className={styles.cell}>
+              ua740.map(({ model, price740, link }, index) => (
+                <div className={styles.cell} key={index}>
                   {link === "" ? (
                     <a
-                      role="link"
+                      href={link}
                       aria-disabled="true"
                       className={styles.linkNotActive}
                     >
@@ -222,7 +225,7 @@ export default function HomeView() {
                     </a>
                   ) : (
                     <a href={link} target="_blank" rel="noreferrer">
-                      {price740}
+                      {removeUAH(price740)}
                     </a>
                   )}
                 </div>
@@ -240,11 +243,11 @@ export default function HomeView() {
               </button>
             </div>
             {statusKupiZamok &&
-              kupiZamok.map(({ model, priceKupiZamok, link }) => (
-                <div className={styles.cell}>
+              kupiZamok.map(({ model, priceKupiZamok, link }, index) => (
+                <div className={styles.cell} key={index}>
                   {link === "" ? (
                     <a
-                      role="link"
+                      href={link}
                       aria-disabled="true"
                       className={styles.linkNotActive}
                     >
@@ -252,7 +255,7 @@ export default function HomeView() {
                     </a>
                   ) : (
                     <a href={link} target="_blank" rel="noreferrer">
-                      {priceKupiZamok}
+                      {removeUAH(priceKupiZamok)}
                     </a>
                   )}
                 </div>
@@ -270,11 +273,11 @@ export default function HomeView() {
               </button>
             </div>
             {statusUkrLock &&
-              ukrLock.map(({ model, priceUkrLock, link }) => (
-                <div className={styles.cell}>
+              ukrLock.map(({ model, priceUkrLock, link }, index) => (
+                <div className={styles.cell} key={index}>
                   {link === "" ? (
                     <a
-                      role="link"
+                      href={link}
                       aria-disabled="true"
                       className={styles.linkNotActive}
                     >
@@ -282,7 +285,7 @@ export default function HomeView() {
                     </a>
                   ) : (
                     <a href={link} target="_blank" rel="noreferrer">
-                      {priceUkrLock}
+                      {removeUAH(priceUkrLock)}
                     </a>
                   )}
                 </div>
@@ -300,11 +303,11 @@ export default function HomeView() {
               </button>
             </div>
             {statusZamochniki &&
-              zamochniki.map(({ model, priceZamochniki, link }) => (
-                <div className={styles.cell}>
+              zamochniki.map(({ model, priceZamochniki, link }, index) => (
+                <div className={styles.cell} key={index}>
                   {link === "" ? (
                     <a
-                      role="link"
+                      href={link}
                       aria-disabled="true"
                       className={styles.linkNotActive}
                     >
@@ -312,7 +315,7 @@ export default function HomeView() {
                     </a>
                   ) : (
                     <a href={link} target="_blank" rel="noreferrer">
-                      {priceZamochniki}
+                      {removeUAH(priceZamochniki)}
                     </a>
                   )}
                 </div>
@@ -330,11 +333,11 @@ export default function HomeView() {
               </button>
             </div>
             {statusSvitZamkiv &&
-              svitZamkiv.map(({ model, priceSvitZamkiv, link }) => (
-                <div className={styles.cell}>
+              svitZamkiv.map(({ model, priceSvitZamkiv, link }, index) => (
+                <div className={styles.cell} key={index}>
                   {link === "" ? (
                     <a
-                      role="link"
+                      href={link}
                       aria-disabled="true"
                       className={styles.linkNotActive}
                     >
@@ -342,7 +345,7 @@ export default function HomeView() {
                     </a>
                   ) : (
                     <a href={link} target="_blank" rel="noreferrer">
-                      {priceSvitZamkiv}
+                      {removeUAH(priceSvitZamkiv)}
                     </a>
                   )}
                 </div>

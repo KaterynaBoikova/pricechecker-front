@@ -60,7 +60,8 @@ const postJobAndGetProgressZU = () => async (dispatch) => {
     .catch((error) => dispatch(jobsActions.errorZamokUkrJob(error.message)));
 };
 
-export default {
+const jobOperations = {
   postJobAndGetProgressTZ,
   postJobAndGetProgressZU,
 };
+export default jobOperations;

@@ -8,7 +8,7 @@ const postJobTopZamokSuccess = createAction("prices/postJobTopZamokSuccess");
 const errorTopZamokJob = createAction("prices/errorTopZamokJob");
 const hideErrorTopZamokJob = createAction("prices/hideErrorTopZamokJob");
 
-export default {
+const jobActions = {
   postJobZamokUkrSuccess,
   errorZamokUkrJob,
   hideErrorZamokUkrJob,
@@ -16,3 +16,4 @@ export default {
   errorTopZamokJob,
   hideErrorTopZamokJob,
 };
+export default jobActions;
