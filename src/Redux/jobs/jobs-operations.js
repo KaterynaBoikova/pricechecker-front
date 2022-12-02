@@ -3,7 +3,8 @@ import jobsActions from "./jobs-action";
 const JOB_NAME_TZ = "topZamok";
 const JOB_NAME_ZU = "zamokUkr";
 const BASE_URL =
-  "https://app-pricechecker-back.herokuapp.com/api/getPrices/jobs/";
+//   "https://app-pricechecker-back.herokuapp.com/api/getPrices/jobs/";
+  "https://localhost:8040/api/getPrices/jobs/";
 
 const postJobAndGetProgressTZ = () => async (dispatch) => {
   dispatch(
