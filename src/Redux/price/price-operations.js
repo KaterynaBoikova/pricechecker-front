@@ -2,7 +2,9 @@ import axios from "axios";
 import actions from "./price-actions";
 
 axios.defaults.baseURL =
-  " https://app-pricechecker-back.herokuapp.com/api/getPrices";
+//   " https://app-pricechecker-back.herokuapp.com/api/getPrices";
+  " https://localhost:8040/api/getPrices";
+
 
 //get Job results
 const fetchPricesZamokUkr = (jobId) => async (dispatch) => {
